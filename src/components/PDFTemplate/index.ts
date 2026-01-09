@@ -1,3 +1,3 @@
-import PDFViewer from './PDFViewer';
+import PDFTemplate from './PDFTemplate';
 
-export default PDFViewer;
+export default PDFTemplate;

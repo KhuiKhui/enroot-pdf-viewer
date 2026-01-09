@@ -1,11 +1,5 @@
-import {
-  Document,
-  Page,
-  Text,
-  View,
-  StyleSheet,
-  ReactPDF,
-} from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'row',
@@ -17,6 +11,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
 });
+
 function PDFTemplate() {
   return (
     <Document>
