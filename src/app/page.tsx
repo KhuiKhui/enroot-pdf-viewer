@@ -1,3 +1,5 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import Form from '@/components/Form';
 import PDFPreview from '@/components/PDFPreview';
 export default function Home() {
@@ -10,6 +12,7 @@ export default function Home() {
         <Form />
         <PDFPreview />
       </div>
+      <SpeedInsights />
     </div>
   );
 }
