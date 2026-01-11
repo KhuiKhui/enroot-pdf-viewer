@@ -1,8 +1,5 @@
-import InputPrimitive from './InputPrimitive';
 import cn from '@/utils/cn';
 
-//const baseInputStyles = 'border-b-2 border-gray-500 bg-purple-100 p-4 focus:border-purple-700 focus:outline-hidden';
-const baseStyles = `bg-[var(--color-base)] border-b-2 border-[var(--color-base)] p-4 focus:bg-[var(--color-focus)] focus:outline-hidden`;
 interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
   label?: string;
 }
@@ -12,12 +9,10 @@ function Input({ label = 'Placeholder', className, ...base }: InputProps) {
       <input
         {...base}
         className={cn(
-          //baseInputStyles,
-          baseStyles,
+          'bg-base border-base focus:bg-focus rounded-sm border-b-2 p-4 focus:outline-hidden',
           className,
         )}
       />
-      <InputPrimitive className={className} {...base} />
       <div className="font-text text-sm text-gray-500">{label}</div>
     </div>
   );

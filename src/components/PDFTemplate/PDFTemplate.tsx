@@ -47,6 +47,16 @@ const styles = StyleSheet.create({
   quote: {
     fontStyle: 'italic',
   },
+
+  bg: {
+    position: 'absolute',
+    minWidth: '100%',
+    minHeight: '100%',
+    height: '100%',
+    width: '100%',
+    objectFit: 'cover',
+    zIndex: -1,
+  },
 });
 
 function PDFTemplate() {
@@ -87,6 +97,7 @@ function PDFTemplate() {
             />
           )}
         </View>
+        <Image src="/temp.png" style={styles.bg} />
       </Page>
     </Document>
   );

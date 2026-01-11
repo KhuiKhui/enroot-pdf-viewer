@@ -3,6 +3,7 @@ import Input from './Input';
 import Button from '../Button';
 import { useSetAtom } from 'jotai';
 import { formValuesAtom } from '@/store';
+import Carousel from './Carousel/Carousel';
 
 function Form() {
   const setFormValues = useSetAtom(formValuesAtom);
@@ -28,7 +29,7 @@ function Form() {
           placeholder="Quote"
           label="Enter a quote you would like to have on your photo."
         />
-        <div className="grid grid-cols-3 grid-rows-3 gap-4">
+        <div className="grid grid-cols-3 gap-4">
           <Input
             name="media1"
             type="file"
@@ -48,6 +49,7 @@ function Form() {
             className="text-center font-bold"
           />
         </div>
+        <Carousel />
         <Button
           type="submit"
           text="Generate PDF!"
