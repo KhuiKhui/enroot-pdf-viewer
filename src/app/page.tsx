@@ -5,6 +5,7 @@ import PDFPreview from '@/components/PDFPreview';
 export default function Home() {
   return (
     <div className="flex h-screen w-screen flex-col gap-6 p-4">
+      <div><img src="/Create Your Memories!.svg"></img></div>
       <div className="my-4 self-start text-2xl font-bold">
         Enroot PDF Viewer
       </div>

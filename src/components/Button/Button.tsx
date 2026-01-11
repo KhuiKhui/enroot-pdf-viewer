@@ -12,7 +12,7 @@ function Button({ text = 'Click me!', className }: ButtonProps) {
         className,
       )}
     >
-      {text}
+      <div className="font-title text-title">{text}</div>
     </button>
   );
 }
