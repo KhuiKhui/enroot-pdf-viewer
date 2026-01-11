@@ -5,7 +5,7 @@ interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
 }
 function Input({ label = 'Placeholder', className, ...base }: InputProps) {
   return (
-    <div className="flex flex-col justify-center gap-2">
+    <div className="flex flex-col justify-center gap-1">
       <input
         {...base}
         className={cn(

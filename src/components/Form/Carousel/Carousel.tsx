@@ -2,17 +2,15 @@
 import { useEffect, useCallback } from 'react';
 import { EmblaCarouselType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
-import CarouselItem from './CarouselItem';
-import { CarouselItemType, carouselItems } from '@/constants/carouselItems';
+import Frame from './Frame';
+import { frames, FrameType } from '@/constants/frames';
 import CarouselArrow from './CarouselArrow';
 
 function Carousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel();
-
   const logSlidesInView = useCallback((emblaApi: EmblaCarouselType) => {
     console.log(emblaApi.selectedScrollSnap());
   }, []);
-
   useEffect(() => {
     if (emblaApi) emblaApi.on('slidesInView', logSlidesInView);
   }, [emblaApi, logSlidesInView]);
@@ -26,9 +24,9 @@ function Carousel() {
         }}
       />
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {carouselItems.map((item: CarouselItemType, _: number) => {
-            return <CarouselItem value={item} key={item.src + _} />;
+        <div className="grid auto-cols-[100%] grid-flow-col">
+          {frames.map((item: FrameType, _: number) => {
+            return <Frame value={item} key={item.src + _} />;
           })}
         </div>
       </div>

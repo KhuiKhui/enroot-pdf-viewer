@@ -1,12 +1,13 @@
 'use client';
 import Input from './Input';
 import Button from '../Button';
-import { useSetAtom } from 'jotai';
-import { formValuesAtom } from '@/store';
+import { useAtomValue, useSetAtom } from 'jotai';
+import { formValuesAtom, frameIdAtom } from '@/store';
 import Carousel from './Carousel/Carousel';
 
 function Form() {
   const setFormValues = useSetAtom(formValuesAtom);
+  const frameId = useAtomValue(frameIdAtom);
   return (
     <form
       method="post"
@@ -15,7 +16,11 @@ function Form() {
         const formData = new FormData(e.currentTarget);
         const formValues = Object.fromEntries(formData);
 
-        setFormValues(Object(formValues));
+        const formValuesObject = Object(formValues); // turn formValues into a workable object
+        formValuesObject.frameId = frameId;
+
+        console.log(formValuesObject);
+        setFormValues(formValuesObject);
       }}
     >
       <div className="flex flex-col justify-center gap-4">
@@ -52,7 +57,7 @@ function Form() {
         <Carousel />
         <Button
           type="submit"
-          text="Generate PDF!"
+          text="Refresh PDF!"
           className="mt-8 w-[70%] self-center"
         />
       </div>

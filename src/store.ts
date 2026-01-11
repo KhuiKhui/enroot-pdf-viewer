@@ -6,9 +6,13 @@ interface FormValuesProps {
   media1?: File;
   media2?: File;
   media3?: File;
+  frameId: number;
 }
 
 export const formValuesAtom = atom<FormValuesProps>({
-  name: 'ROOTie',
-  quote: 'Trailblazing a World by Design!!',
+  name: '',
+  quote: '',
+  frameId: 0,
 });
+
+export const frameIdAtom = atom<number>(0);

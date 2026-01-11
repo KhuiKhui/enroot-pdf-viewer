@@ -8,6 +8,7 @@ import {
   Image,
 } from '@react-pdf/renderer';
 import { useAtomValue } from 'jotai';
+import { frames } from '@/constants/frames';
 
 const styles = StyleSheet.create({
   page: {
@@ -97,7 +98,7 @@ function PDFTemplate() {
             />
           )}
         </View>
-        <Image src="/temp.png" style={styles.bg} />
+        <Image src={frames[formValues.frameId].src} style={styles.bg} />
       </Page>
     </Document>
   );
