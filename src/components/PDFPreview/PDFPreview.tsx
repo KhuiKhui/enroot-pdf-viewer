@@ -13,7 +13,7 @@ const PDFViewer = dynamic(
 import PDFTemplate from '../PDFTemplate/PDFTemplate';
 function PDFPreview() {
   return (
-    <PDFViewer className="aspect-a4 h-full rounded-sm">
+    <PDFViewer className="aspect-a4 rounded-sm lg:h-full">
       <PDFTemplate />
     </PDFViewer>
   );

@@ -14,7 +14,7 @@ export default function Home() {
           src="/Create Your Memories!.svg"
         />
       </div>
-      <div className="grid size-full grid-cols-1 gap-16 md:grid-cols-2">
+      <div className="flex size-full flex-col gap-16 lg:flex-row">
         <Form />
         <PDFPreview />
       </div>

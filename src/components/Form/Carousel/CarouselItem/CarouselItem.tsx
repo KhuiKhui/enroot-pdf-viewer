@@ -9,7 +9,7 @@ function CarouselItem({ value, className }: CarouselItemProps) {
   return (
     <div
       className={cn(
-        'bg-base flex shrink-0 grow-0 basis-full flex-row gap-4 rounded-sm text-center',
+        'bg-base flex shrink-0 grow-0 basis-full flex-col gap-2 rounded-sm text-center md:flex-row',
         className,
       )}
     >
@@ -20,8 +20,8 @@ function CarouselItem({ value, className }: CarouselItemProps) {
         width={250}
         height={100}
       />
-      <div className="flex flex-col items-start">
-        <div className="block text-lg font-bold">{value.label}</div>
+      <div className="flex flex-col items-start justify-start p-2">
+        <div className="text-start text-lg font-bold">{value.label}</div>
         <div>{value.desc}</div>
       </div>
     </div>
