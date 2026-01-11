@@ -4,20 +4,22 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --color-base: #FFD8E4;
-  --color-focus: #FFF2F6;
 }
 
-@theme inline {
+@theme {
+  --breakpoint-lg: 52rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-title: "Qwigley", cursive;
-  --font-text: "Lato", sans-serif;
+  --color-base: #ffd8e4;
+  --color-focus: #fff2f6;
+  /* --font-sans: var(--font-geist-sans); */
+  /* --font-mono: var(--font-geist-mono); */
+  --font-title: 'Qwigley', cursive;
+  --font-text: 'Lato', sans-serif;
   --text-title: 2rem;
   --text-body: 1rem;
 
+  --aspect-a4: 1 / 1.414;
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -40,8 +42,8 @@ body {
   background-attachment: fixed;
 }
 
-label {
-  font-family: var(--font-text);
-  font-size: var(--text-size);
-  font-weight: 600;
-}
+/* label { */
+/*   font-family: var(--font-text); */
+/*   font-size: var(--text-size); */
+/*   font-weight: 600; */
+/* } */
