@@ -1,3 +1,4 @@
+import InputPrimitive from './InputPrimitive';
 import cn from '@/utils/cn';
 
 //const baseInputStyles = 'border-b-2 border-gray-500 bg-purple-100 p-4 focus:border-purple-700 focus:outline-hidden';
@@ -16,7 +17,8 @@ function Input({ label = 'Placeholder', className, ...base }: InputProps) {
           className,
         )}
       />
-      <div className="text-sm text-gray-500 font-[var(--font-text)]">{label}</div>
+      <InputPrimitive className={className} {...base} />
+      <div className="font-text text-sm text-gray-500">{label}</div>
     </div>
   );
 }
