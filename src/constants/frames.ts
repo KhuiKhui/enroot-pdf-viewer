@@ -8,15 +8,15 @@ export interface FrameType {
 export const frames: FrameType[] = [
   {
     id: 0,
-    label: 'ORA ORA ORA ORA',
-    desc: 'yare yare daze',
-    src: '/temp.png',
+    label: 'Winter Memories',
+    desc: 'How was your winter break?',
+    src: '/Frame1.png',
   },
   {
     id: 1,
-    label: 'MUHAMMEDO AVDORU',
-    desc: 'YES, i AM!',
-    src: '/temp2.png',
+    label: 'Happy New Year',
+    desc: 'Goodbye 2025',
+    src: '/Frame2.png',
   },
   {
     id: 2,
