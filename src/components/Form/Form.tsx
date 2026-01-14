@@ -43,18 +43,21 @@ function Form() {
             type="file"
             label="Choose the first image."
             className="text-center font-bold"
+            accept=".jpg, .jpeg, .png"
           />
           <Input
             name="media2"
             type="file"
             label="Choose the second image."
             className="text-center font-bold"
+            accept=".jpg, .jpeg, .png"
           />
           <Input
             name="media3"
             type="file"
             label="Choose the third image."
             className="text-center font-bold"
+            accept=".jpg, .jpeg, .png"
           />
         </div>
         <br className="mt-1" />
