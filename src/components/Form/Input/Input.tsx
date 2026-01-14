@@ -3,18 +3,26 @@ import cn from '@/utils/cn';
 interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
   label?: string;
 }
-
-function Input({ label = 'Placeholder', className, ...base }: InputProps) {
+function Input({
+  label = 'Placeholder',
+  maxLength,
+  className,
+  ...base
+}: InputProps) {
   return (
-    <div className="flex flex-col justify-center gap-2">
+    <div className="flex flex-col justify-center gap-1">
       <input
         {...base}
+        maxLength={maxLength}
         className={cn(
-          'border-b-2 border-gray-500 bg-purple-100 p-4 focus:border-purple-700 focus:outline-hidden',
+          'bg-base border-base focus:bg-focus rounded-sm border-b-2 p-4 focus:outline-hidden',
           className,
         )}
       />
-      <div className="text-sm text-gray-500">{label}</div>
+      <div className="font-text flex flex-row items-center justify-between text-sm text-gray-500">
+        <div>{label}</div>
+        {maxLength && <div>Max {maxLength} characters.</div>}
+      </div>
     </div>
   );
 }

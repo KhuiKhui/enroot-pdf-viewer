@@ -1,15 +1,26 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import Form from '@/components/Form';
-import PDFViewer from '@/components/PDFViewer';
+import PDFPreview from '@/components/PDFPreview';
+import Image from 'next/image';
+import LoadingScreen from '@/components/LoadingScreen';
 export default function Home() {
   return (
-    <div className="flex size-full flex-col justify-center gap-6 p-4">
-      <div className="my-4 self-start text-2xl font-bold">
-        Enroot PDF Viewer
+    <div className="relative flex h-screen w-screen flex-col gap-6 p-8">
+      <LoadingScreen />
+      <div>
+        <Image
+          width={500}
+          height={100}
+          alt="title"
+          src="/Create Your Memories!.svg"
+        />
       </div>
-      <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
+      <div className="flex size-full flex-col gap-16 lg:flex-row">
         <Form />
-        <PDFViewer />
+        <PDFPreview />
       </div>
+      <SpeedInsights />
     </div>
   );
 }
