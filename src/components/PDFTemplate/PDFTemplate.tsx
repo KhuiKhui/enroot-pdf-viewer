@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 322,
     left: 347,
-    top: 120,
+    top: 110,
     zIndex: 3,
   },
   pic2: {
