@@ -3,9 +3,11 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Form from '@/components/Form';
 import PDFPreview from '@/components/PDFPreview';
 import Image from 'next/image';
+import LoadingScreen from '@/components/LoadingScreen';
 export default function Home() {
   return (
-    <div className="flex h-screen w-screen flex-col gap-6 p-8">
+    <div className="relative flex h-screen w-screen flex-col gap-6 p-8">
+      <LoadingScreen />
       <div>
         <Image
           width={500}

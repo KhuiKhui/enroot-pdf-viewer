@@ -12,8 +12,6 @@
   --color-foreground: var(--foreground);
   --color-base: #ffd8e4;
   --color-focus: #fff2f6;
-  /* --font-sans: var(--font-geist-sans); */
-  /* --font-mono: var(--font-geist-mono); */
   --font-title: 'Qwigley', cursive;
   --font-text: 'Lato', sans-serif;
   --text-title: 2rem;
@@ -21,13 +19,6 @@
 
   --aspect-a4: 1 / 1.414;
 }
-
-/* @media (prefers-color-scheme: dark) { */
-/*   :root { */
-/*     --background: #0a0a0a; */
-/*     --foreground: #ededed; */
-/*   } */
-/* } */
 
 body {
   background: var(--background);
@@ -41,9 +32,3 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
-/* label { */
-/*   font-family: var(--font-text); */
-/*   font-size: var(--text-size); */
-/*   font-weight: 600; */
-/* } */

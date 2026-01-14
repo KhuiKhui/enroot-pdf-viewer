@@ -15,7 +15,7 @@ function CarouselArrow({ src, className, ...base }: CarouselArrowProps) {
       )}
       {...base}
     >
-      <Image width={0} height={0} alt="arrow" src={src} className="w-8" />
+      <Image width={0} height={0} alt="arrow" src={src} className="w-16" />
     </div>
   );
 }

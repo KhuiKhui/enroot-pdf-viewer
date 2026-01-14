@@ -1,19 +1,12 @@
 import { formValuesAtom } from '@/store';
-import {
-  Document,
-  Page,
-  Text,
-  View,
-  StyleSheet,
-  Image,
-} from '@react-pdf/renderer';
+import { Document, Page, Text, StyleSheet, Image } from '@react-pdf/renderer';
 import { useAtomValue } from 'jotai';
 import { frames } from '@/constants/frames';
 
 const styles = StyleSheet.create({
   page: {
+    position: 'relative',
     flexDirection: 'column',
-    backgroundColor: '#E4E4E4',
   },
   section: {
     padding: 10,
@@ -23,29 +16,43 @@ const styles = StyleSheet.create({
     position: 'absolute',
     objectFit: 'cover',
     width: 200,
-    height: 400,
+    height: 322,
+    left: 347,
+    top: 120,
+    zIndex: 3,
   },
   pic2: {
     position: 'absolute',
     objectFit: 'cover',
-    left: 200,
     width: 200,
-    height: 400,
+    height: 322,
+    left: 64,
+    top: 485,
+    zIndex: 3,
   },
   pic3: {
     position: 'absolute',
     objectFit: 'cover',
-    top: 200,
     width: 200,
-    height: 400,
+    height: 322,
+    left: 347,
+    top: 485,
+    zIndex: 3,
   },
 
   name: {
+    position: 'absolute',
+    left: 50,
+    top: 100,
     fontWeight: 'bold',
     fontSize: 24,
+    zIndex: 1,
   },
 
   quote: {
+    position: 'absolute',
+    left: 50,
+    top: 125,
     fontStyle: 'italic',
   },
 
@@ -56,7 +63,7 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     objectFit: 'cover',
-    zIndex: -1,
+    zIndex: 2,
   },
 });
 
@@ -65,40 +72,29 @@ function PDFTemplate() {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        <View style={styles.section}>
-          <Text style={styles.name}>{formValues.name}</Text>
-        </View>
-        <View style={styles.section}>
-          <Text style={styles.quote}>{formValues.quote}</Text>
-        </View>
+        <Text style={styles.name}>{formValues.name}</Text>
+        <Text style={styles.quote}>{formValues.quote}</Text>
 
-        <View style={styles.section}>
-          {formValues.media1! && (
-            <Image
-              src={URL.createObjectURL(formValues.media1)}
-              style={styles.pic1}
-            />
-          )}
-        </View>
+        {formValues.media1! && (
+          <Image
+            src={URL.createObjectURL(formValues.media1)}
+            style={styles.pic1}
+          />
+        )}
+        {formValues.media2! && (
+          <Image
+            src={URL.createObjectURL(formValues.media2)}
+            style={styles.pic2}
+          />
+        )}
 
-        <View style={styles.section}>
-          {formValues.media2! && (
-            <Image
-              src={URL.createObjectURL(formValues.media2)}
-              style={styles.pic2}
-            />
-          )}
-        </View>
-
-        <View style={styles.section}>
-          {formValues.media3! && (
-            <Image
-              src={URL.createObjectURL(formValues.media3)}
-              style={styles.pic3}
-            />
-          )}
-        </View>
-        <Image src={frames[formValues.frameId].src} style={styles.bg} />
+        {formValues.media3! && (
+          <Image
+            src={URL.createObjectURL(formValues.media3)}
+            style={styles.pic3}
+          />
+        )}
+        <Image cache src={frames[formValues.frameId].src} style={styles.bg} />
       </Page>
     </Document>
   );

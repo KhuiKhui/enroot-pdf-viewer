@@ -14,14 +14,8 @@ export const frames: FrameType[] = [
   },
   {
     id: 1,
-    label: 'Happy New Year',
+    label: 'Happy New Year!',
     desc: 'Capture the joy and excitement of the new year with this vibrant, festive frame. Featuring a rich background adorned with golden stripes, it adds a touch of celebration to any cherished moment. Perfect for marking the beginning of a fresh chapter, this frame brings warmth and optimism to your most treasured memories.',
     src: '/Frame2.png',
-  },
-  {
-    id: 2,
-    label: 'MADE IN HEAVEN',
-    desc: '2 3 5 7 11 13 17 19',
-    src: '/temp3.jpg',
   },
 ];

@@ -4,6 +4,7 @@ import Button from '../Button';
 import { useAtomValue, useSetAtom } from 'jotai';
 import { formValuesAtom, frameIdAtom } from '@/store';
 import Carousel from './Carousel/Carousel';
+import DownloadButton from '../Button/DownloadButton';
 
 function Form() {
   const setFormValues = useSetAtom(formValuesAtom);
@@ -23,16 +24,18 @@ function Form() {
         setFormValues(formValuesObject);
       }}
     >
-      <div className="flex flex-col justify-center gap-4">
+      <div className="flex flex-col justify-center gap-6">
         <Input
           name="name"
           placeholder="Display name"
           label="Enter your name! This will appear on the final photo."
+          maxLength={20}
         />
         <Input
           name="quote"
           placeholder="Quote"
           label="Enter a quote you would like to have on your photo."
+          maxLength={30}
         />
         <div className="grid grid-cols-3 gap-4">
           <Input
@@ -54,12 +57,16 @@ function Form() {
             className="text-center font-bold"
           />
         </div>
+        <br className="mt-1" />
         <Carousel />
-        <Button
-          type="submit"
-          text="Refresh PDF!"
-          className="mt-8 w-[70%] self-center"
-        />
+        <div className="flex flex-row items-center justify-center gap-4">
+          <Button
+            type="submit"
+            text="Refresh PDF!"
+            className="mt-8 w-[70%] self-center"
+          />
+          <DownloadButton className="mt-8 w-[70%] self-center" />
+        </div>
       </div>
     </form>
   );
