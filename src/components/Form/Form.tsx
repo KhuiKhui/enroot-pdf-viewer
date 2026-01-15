@@ -5,6 +5,8 @@ import { useAtomValue, useSetAtom } from 'jotai';
 import { formValuesAtom, frameIdAtom } from '@/store';
 import Carousel from './Carousel/Carousel';
 import DownloadButton from '../Button/DownloadButton';
+import { document } from 'pdfkit/js/page';
+import TextArea from './TextArea';
 
 function Form() {
   const setFormValues = useSetAtom(formValuesAtom);
@@ -31,11 +33,12 @@ function Form() {
           label="Enter your name! This will appear on the final photo."
           maxLength={20}
         />
-        <Input
+        <TextArea
           name="quote"
           placeholder="Quote"
           label="Enter a quote you would like to have on your photo."
-          maxLength={30}
+          maxLength={250}
+          className="resize-none"
         />
         <div className="grid grid-cols-3 gap-4">
           <Input

@@ -1,5 +1,12 @@
 import { formValuesAtom } from '@/store';
-import { Document, Page, Text, StyleSheet, Image } from '@react-pdf/renderer';
+import {
+  Document,
+  View,
+  Page,
+  Text,
+  StyleSheet,
+  Image,
+} from '@react-pdf/renderer';
 import { useAtomValue } from 'jotai';
 import { frames } from '@/constants/frames';
 
@@ -10,6 +17,12 @@ const styles = StyleSheet.create({
   },
   section: {
     padding: 10,
+  },
+  quoteSection: {
+    padding: 10,
+    width: 250,
+    height: 322,
+    textAlign: 'justify',
   },
 
   pic1: {
@@ -52,7 +65,7 @@ const styles = StyleSheet.create({
   quote: {
     position: 'absolute',
     left: 50,
-    top: 125,
+    top: 135,
     fontStyle: 'italic',
   },
 
@@ -73,7 +86,9 @@ function PDFTemplate() {
     <Document>
       <Page size="A4" style={styles.page}>
         <Text style={styles.name}>{formValues.name}</Text>
-        <Text style={styles.quote}>{formValues.quote}</Text>
+        <View style={styles.quoteSection}>
+          <Text style={styles.quote}>{formValues.quote}</Text>
+        </View>
 
         {formValues.media1! && (
           <Image
