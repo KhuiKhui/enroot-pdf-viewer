@@ -21,15 +21,13 @@ function Frame({ value, className, ...base }: FrameProps) {
       )}
       {...base}
     >
-      <div className="aspect-a4 bg-white">
-        <Image
-          className="size-full self-center rounded-tl-sm rounded-bl-sm object-cover md:self-start"
-          src={value.src}
-          alt="frame-pic"
-          width={250}
-          height={100}
-        />
-      </div>
+      <Image
+        className="aspect-a4 self-center rounded-tl-sm rounded-bl-sm object-cover md:self-start"
+        src={value.src}
+        alt="frame-pic"
+        width={250}
+        height={100}
+      />
       <div className="flex size-full flex-col items-start justify-start gap-2 p-2">
         <div className="flex w-full flex-col items-center justify-between md:flex-row">
           <div className="text-start text-xl font-bold">{value.label}</div>
@@ -39,7 +37,7 @@ function Frame({ value, className, ...base }: FrameProps) {
             </div>
           )}
         </div>
-        <div className="text-start">{value.desc}</div>
+        <div className="md:text-body text-start text-sm">{value.desc}</div>
         <Button
           onClick={() => {
             setFrameId(value.id);

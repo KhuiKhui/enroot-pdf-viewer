@@ -21,6 +21,11 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-regular-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.1",
     "@tailwindcss/postcss": "^4",
     "@types/blob-stream": "^0.1.33",
     "@types/node": "^20",

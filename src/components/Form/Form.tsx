@@ -26,7 +26,7 @@ function Form() {
         setFormValues(formValuesObject);
       }}
     >
-      <div className="flex flex-col justify-center gap-6">
+      <div className="flex size-fit flex-col justify-center gap-4">
         <Input
           name="name"
           placeholder="Display name"
@@ -63,15 +63,14 @@ function Form() {
             accept=".jpg, .jpeg, .png"
           />
         </div>
-        <br className="mt-1" />
         <Carousel />
-        <div className="flex flex-row items-center justify-center gap-4">
+        <div className="mt-8 flex size-full flex-row items-center justify-center gap-4">
           <Button
             type="submit"
-            text="Refresh PDF!"
-            className="mt-8 w-[70%] self-center"
+            text="Refresh!"
+            className="w-[50%] md:w-[60%]"
           />
-          <DownloadButton className="mt-8 w-[70%] self-center" />
+          <DownloadButton className="w-[50%] md:max-w-fit" />
         </div>
       </div>
     </form>

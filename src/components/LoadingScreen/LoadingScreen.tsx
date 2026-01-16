@@ -19,7 +19,7 @@ function LoadingScreen() {
         return (
           <div
             className={cn({
-              'bg-base absolute top-0 left-0 z-30 flex size-full items-center justify-center opacity-90':
+              'bg-base absolute top-0 left-0 z-30 flex size-full items-center justify-center':
                 loading,
               'absolute -z-30 hidden': !loading,
             })}

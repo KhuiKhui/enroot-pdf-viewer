@@ -6,16 +6,14 @@ import Image from 'next/image';
 import LoadingScreen from '@/components/LoadingScreen';
 export default function Home() {
   return (
-    <div className="relative flex h-screen w-screen flex-col gap-6 p-8">
+    <div className="relative flex h-screen w-screen flex-col gap-6 p-2 md:p-8">
       <LoadingScreen />
-      <div>
-        <Image
-          width={500}
-          height={100}
-          alt="title"
-          src="/Create Your Memories!.svg"
-        />
-      </div>
+      <Image
+        width={500}
+        height={100}
+        alt="title"
+        src="/Create Your Memories!.svg"
+      />
       <div className="flex size-full flex-col gap-16 lg:flex-row">
         <Form />
         <PDFPreview />

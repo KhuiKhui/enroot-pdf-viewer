@@ -1,7 +1,6 @@
 'use client';
 import cn from '@/utils/cn';
 import PDFTemplate from '@/components/PDFTemplate';
-
 import dynamic from 'next/dynamic';
 
 const PDFDownloadLink = dynamic(
@@ -12,16 +11,15 @@ const PDFDownloadLink = dynamic(
   },
 );
 
-interface DownloadButtonProps extends React.ComponentPropsWithoutRef<'button'> {
-  text?: string;
-}
-
-function DownloadButton({ className, ...base }: DownloadButtonProps) {
+function DownloadButton({
+  className,
+  ...base
+}: React.ComponentPropsWithoutRef<'button'>) {
   return (
     <button
       {...base}
       className={cn(
-        'max-w-fit rounded-md bg-black p-4 text-center text-white transition-all hover:bg-gray-700 active:bg-green-500',
+        'rounded-md bg-black p-4 text-center text-white transition-all hover:bg-gray-700 active:bg-green-500',
         className,
       )}
     >
@@ -31,7 +29,7 @@ function DownloadButton({ className, ...base }: DownloadButtonProps) {
         className="font-title text-title"
       >
         {({ blob, url, loading, error }) =>
-          loading ? 'Loading document...' : 'Download PDF!'
+          loading ? 'Loading...' : 'Download!'
         }
       </PDFDownloadLink>
     </button>
